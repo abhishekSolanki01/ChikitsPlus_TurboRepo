@@ -12,7 +12,6 @@ const SECRET = "mysec"
 type Data = {
   name: string,
   token: string,
-  receptionistData: Object,
   response: any
 }
 
@@ -25,24 +24,24 @@ export default async function handler(
     sendResponse(res, { apiStatus: HTTPStatus.INVALIDMETHOD })
     return;
   } else {
-    const response = signUpInputs.safeParse(req.body);
-    if(!response.success) {
-      const { errors } = response.error;
-      sendResponse(res, { apiStatus: HTTPStatus.FORBIDDEN, data: {errors} })
+    try {
+      console.log("req.body", req.body);
+      
+      const response = signUpInputs.safeParse(req.body);
+      if (!response.success) {
+        const { errors } = response.error;
+        sendResponse(res, { apiStatus: HTTPStatus.FORBIDDEN, data: { errors } })
+        return;
+      }
+      ensureConnection();
+      let {email, password} = response.data;
+      const token = jwt.sign({ email, password }, SECRET);
+      const receptionistCol = new Receptionist()
+      const data = await receptionistCol.save(response.data)
+      sendResponse(res, { apiStatus: HTTPStatus.OK, data: { token, data } })
+      
+    } catch (error) {
+      sendResponse(res, { apiStatus: HTTPStatus.INTERNALSERVERERROR , data: { errors: error } })
     }
-    ensureConnection();
-    let {
-      email,
-      password,
-      firstName,
-      lastName,
-      gender,
-      dob,
-      contactNumber,
-      address,
-      userName } = req.body;
-    const token = jwt.sign({ email, password }, SECRET);
-    const receptionistData = await Receptionist.find({})
-    res.status(200).json({ name: 'John Doe', token, receptionistData, response })
   }
 }
