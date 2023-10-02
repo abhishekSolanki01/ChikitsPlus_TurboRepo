@@ -17,7 +17,9 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "ui": "*"
+    "ui": "*",
+    "zod": "*",
+    "response-handler" : "*" 
   },
   "devDependencies": {
     "@types/node": "latest",

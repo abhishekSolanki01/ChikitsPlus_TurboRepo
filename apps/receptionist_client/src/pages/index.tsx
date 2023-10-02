@@ -11,10 +11,29 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Signup title={"Signup to ChiktsaPlus"} onClick={async(email, password) => {
-        let res = await axios.post('api/signup', {email, password});
+      <Signup title={"Signup to ChiktsaPlus"} onClick={async (
+        email,
+        password,
+        firstName,
+        lastName,
+        gender,
+        dob,
+        contactNumber,
+        address,
+        userName) => {
+        let res = await axios.post('api/signup', {
+          email,
+          password,
+          firstName,
+          lastName,
+          gender,
+          dob,
+          contactNumber,
+          address,
+          userName
+        });
         localStorage.setItem("token", res.data.token)
-      }}/>
+      }} />
     </>
   )
 }

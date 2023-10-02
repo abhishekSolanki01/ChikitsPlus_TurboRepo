@@ -10,7 +10,7 @@ export const Signup = (props: {
         lastName : string,
         gender : string,
         dob : string,
-        contactNumber : number | null,
+        contactNumber : string,
         address : string,
         userName : string) => void
 }) => {
@@ -22,7 +22,7 @@ export const Signup = (props: {
     const [dob, setDob] = useState("");
     const [contactNumber, setContactNumber] = useState(null);
     const [address, setAddress] = useState("");
-    const [userName, setUserNAme] = useState("");
+    const [userName, setUserName] = useState("");
     return (
         <div>
             <Box sx={{ '& > :not(style)': { m: 4, mt: 0 }, m: 0, height: "auto" }}>
@@ -36,7 +36,7 @@ export const Signup = (props: {
                     <Inputs label="Gender" onChange={setGender} />
                     <Inputs label="Date of Birth" onChange={setDob} />
                     <Inputs label="Contact number" onChange={setContactNumber} />
-                    <Inputs label="User name" onChange={setUserNAme} />
+                    <Inputs label="User name" onChange={setUserName} />
                     <Inputs label="Address" onChange={setAddress} width={650} grid={12}/>
                 </Grid>
                 </Box>
@@ -55,6 +55,18 @@ export const Signup = (props: {
                             address,
                             userName)
                     }} variant="contained" >Login</Button>
+
+                    <Button onClick={() => {
+                        setFirstName("Abhishek")
+                        setLastName("")
+                        setEmail("abi@gmail.com")
+                        setPassword("12345")
+                        setGender("Male")
+                        setDob("10/09/1819")
+                        setContactNumber(12345)
+                        setUserName("zooKeeper")
+                        setAddress("zoo")
+                    }}>Set dummy data</Button>
                 </Box>
             </Box>
         </div >
