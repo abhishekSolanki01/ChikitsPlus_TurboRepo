@@ -17,10 +17,11 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "recoil": "^0.7.7",
+    "response-handler": "*",
+    "stores": "*",
     "ui": "*",
-    "zod": "*",
-    "response-handler" : "*",
-    "stores": "*"
+    "zod": "*"
   },
   "devDependencies": {
     "@types/node": "latest",
