@@ -19,7 +19,8 @@
     "react-dom": "latest",
     "ui": "*",
     "zod": "*",
-    "response-handler" : "*" 
+    "response-handler" : "*",
+    "stores": "*"
   },
   "devDependencies": {
     "@types/node": "latest",
