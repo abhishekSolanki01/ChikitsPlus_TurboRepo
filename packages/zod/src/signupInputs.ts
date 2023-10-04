@@ -12,3 +12,14 @@ export const signUpInputs = z.object({
     address: z.string().min(3).optional()
 })
 
+export const validateSignupInputs = (payload: any):any => {
+    return signUpInputs.safeParse(payload) 
+    // try{
+    //     const parsedValue = signUpInputs.safeParse(payload)        
+    //     return {status: true, data : parsedValue} ;
+    // }catch(err){
+    //     console.log("here2", err);
+    //     return {status: false, errors : (err as any).issues};
+    // }
+}
+

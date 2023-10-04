@@ -20,7 +20,7 @@ export default function Home() {
         dob,
         contactNumber,
         address,
-        userName) => {
+        userName) => {          
         let res = await axios.post('api/signup', {
           email,
           password,
