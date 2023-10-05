@@ -19,17 +19,27 @@ export default async function handler(
     return;
   } else {
     try {
-      let { email } = req.body;
-      const ifExist = await Receptionist.find({ email }).lean()
+      // let { email } = req.body;
+      // const ifExist = await Receptionist.find({ email }).lean()
+
+      const authorization = req.headers.authorization;
+      if (!authorization) {
+        sendResponse(res, { apiStatus: HTTPStatus.UNAUTHORIZED })
+        return
+      }
+
+      const token = authorization.split(" ")[1];
+      const ifExist:any = jwt.verify(token, SECRET)
 
       if (ifExist) {
-        sendResponse(res, { apiStatus: HTTPStatus.OK, message: "User exist" })
+        const userData = await Receptionist.findOne({email : ifExist.email})
+        sendResponse(res, { apiStatus: HTTPStatus.OK, message: "User exist", data: {email: userData.email} })
         return
       }
       sendResponse(res, { apiStatus: HTTPStatus.UNAUTHORIZED })
 
     } catch (e) {
-      sendResponse(res, { apiStatus: HTTPStatus.INTERNALSERVERERROR , data: { errors: e } })
+      sendResponse(res, { apiStatus: HTTPStatus.INTERNALSERVERERROR, data: { errors: e } })
     }
   }
 

@@ -31,8 +31,8 @@ export default function Home() {
           contactNumber,
           address,
           userName
-        });
-        localStorage.setItem("token", res.data.token)
+        });        
+        localStorage.setItem("token", res.data.data.token)
       }} />
     </>
   )
