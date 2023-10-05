@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 const App2 = (props: any) => {
   const { Component, pageProps } = props;
   const userLoading = useRecoilValue(isUserLoadingState)
-  if (userLoading) {
+  if (userLoading && false) {
     return (
       <>
         <AppBar />
