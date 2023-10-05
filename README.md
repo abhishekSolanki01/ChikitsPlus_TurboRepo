@@ -5,9 +5,10 @@
 The ChikitsaPlus is a web application designed to streamline and optimize the operations of clinics. It provides a user-friendly interface for receptionists and doctors to efficiently manage patient data, appointments, and payments. The system incorporates various technologies and design patterns to ensure robustness, security, and scalability.
 
 ## Tech Stack
-
-- **Frontend**: Next.js, React, Material UI
-- **Backend**: Turbo Repo, Prisma
+- **FrameWork**: TurboRepo, Next.js
+- **Frontend**: React, Material UI, Recoil
+- **DataBase**: MongoDB, ( ongoing migrating to Prisma )
+- **Backend**: NextJs
 - **Language**: TypeScript (strict typing)
 - **Validation**: Zod
 - **Testing**: Jest
