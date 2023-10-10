@@ -8,7 +8,7 @@ The ChikitsaPlus is a web application designed to streamline and optimize the op
 - **FrameWork**: TurboRepo, Next.js
 - **Frontend**: React, Material UI, Recoil
 - **DataBase**: MongoDB, ( ongoing migrating to Prisma )
-- **Backend**: NextJs
+- **Backend**: NextJs(SSR)
 - **Language**: TypeScript (strict typing)
 - **Validation**: Zod
 - **Testing**: Jest
