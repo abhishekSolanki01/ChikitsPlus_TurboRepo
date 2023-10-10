@@ -34,10 +34,15 @@ The ChikitsaPlus is a web application designed to streamline and optimize the op
 
 To run the project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-repo-url.git`
+1. Clone the repository: `git clone https://github.com/abhishekSolanki01/ChikitsPlus_TurboRepo.git`
 2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser and navigate to `http://localhost:3000`
+3. Start the development server:
+   - For Receptionist's view
+   ```
+   cd apps/receptionist_client
+   npm run dev
+   ```
+6. Open your browser and navigate to `http://localhost:3000`
 
 ## Testing
 
