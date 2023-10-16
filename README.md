@@ -12,7 +12,7 @@ The ChikitsaPlus is a web application designed to streamline and optimize the op
 - **Language**: TypeScript (strict typing)
 - **Validation**: Zod
 - **Testing**: Jest
-- **Authentication**: JWT Tokens
+- **Authentication**: JWT Tokens 
 
 ## Features
 
